@@ -1,5 +1,8 @@
-# calcul_impot_python
-Mini projet en python pour le calcul de l'impot
+# Simulateur de l'impot en python !
+
+Ce miini projet en python est consacré pour le calcul de l'impot, l'idée m'est venu après avoir été frustré lors de la lecture des chiffres incompréhensible sur mon avis d'imposition ! et surout je voulais confirmer que le comptes est bon pour mes impots.
+Enfin j'ai eu le curiosité de décortiquer l'usine de calcul des impots. 
+En effet, il reste encore des choses a prendre en comptes.
 
 Ce script permis le calcul de l'impot 2019 pour revnu 2018
 Quel est votre sitution famillial? 
