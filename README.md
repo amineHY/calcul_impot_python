@@ -29,3 +29,6 @@ Verification pour une possibilité de réduction d"impot sur le revenu:  "La dé
 * Reduction de l"impot sous condition de RFR : ??? Euros
 
 TOTAL D"IMPOSITION NETTE  A RECOUVRIR EN 2019 sur les revenus de 2018 >> ??? Euros <<
+
+
+https://aminehy.github.io/calcul_impot_python/
