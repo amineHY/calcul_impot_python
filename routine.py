@@ -30,7 +30,7 @@ def calcul_de_parts():
     elif nbr_enfant > 2:
         parts += 1 + (nbr_enfant-2)
 
-    print('Le nombre de part(s) fiscale est : {0:2.2f}'.format(parts))
+    print('* Le nombre de part(s) fiscale est : {0:2.2f}'.format(parts))
     return parts, statu, nbr_enfant
 
 

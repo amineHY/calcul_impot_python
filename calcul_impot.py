@@ -35,21 +35,21 @@ print('=> Quotient familial = {0:2.2f} Euros'.format(quotient_familial))
 print('\n* Application du barème:')
 impot_bareme = application_bareme_sur_impot(quotient_familial)
 
-print('\nImpot 2019 sur les revenues de 2018 soumis au barème : {0:2.2f} Euros'.format(
+print('\nImpot 2019 sur les revenues de 2018 soumis au barème est : {0:2.2f} Euros'.format(
     impot_bareme))
 
 # %%
-print('\n* Verification pour une possibilité de réduction d"impot sur le revenu:  "La décote et la réduction d’impôt sous condition de revenu fiscal de référence (RFR)" ')
+print('\nVerification pour une possibilité de réduction d"impot sur le revenu:  "La décote et la réduction d’impôt sous condition de revenu fiscal de référence (RFR)" ')
 
 decote = calcul_decote(impot_bareme, statu)
-print('Décote : {0:2.2f} Euros'.format(decote))
+print('* Décote : {0:2.2f} Euros'.format(decote))
 
 impot_total = impot_bareme - decote
 reduc_revenu = calcul_reduc_RFR(impot_total, revenu, parts, nbr_enfant)
-print('Reduction de l"impot sous condition de RFR : {0:2.2f} Euros'.format(
+print('* Reduction de l"impot sous condition de RFR : {0:2.2f} Euros'.format(
     reduc_revenu))
 
 impot_total = max(0, impot_total - reduc_revenu)
-print('\nTOTAL D"IMPOSITION NETTE  A RECOUVRIR EN 2019 sur les revenus de 2018 >> {0:2.2f} Euros <<'.format(
+print('\nTOTAL D"IMPOSITION NETTE  A RECOUVRIR EN 2019 sur les revenus de 2018 >> {0:2.2f} Euros <<\n'.format(
     impot_total))
 
