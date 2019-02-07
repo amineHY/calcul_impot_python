@@ -3,9 +3,9 @@ Mini projet en python pour le calcul de l'impot
 
 Ce script permis le calcul de l'impot 2019 pour revnu 2018
 Quel est votre sitution famillial? 
-1 :"Celibataire|Divorcé|Veuf"  
-2 :"Couple" 
-3 :"Autre" 
+# 1 :"Celibataire|Divorcé|Veuf"  
+# 2 :"Couple" 
+# 3 :"Autre" 
 
 Veuiller saisir le nombre d"enfants à votre charges : ???
 * Le nombre de part(s) fiscale est : 1.00
