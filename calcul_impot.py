@@ -53,3 +53,5 @@ impot_total = max(0, impot_total - reduc_revenu)
 print('\nTOTAL D"IMPOSITION NETTE  A RECOUVRIR EN 2019 sur les revenus de 2018 >> {0:2.2f} Euros <<\n'.format(
     impot_total))
 
+
+print('Le taux de prélèvement personnaliser est : {0:2.2f} %\n'.format(impot_total * 100 / revenu))
