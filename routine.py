@@ -35,10 +35,13 @@ def calcul_de_parts():
 
 
 def calcul_decote(impot_bareme, statu):
-    decote = ((1177 - impot_bareme * 0.75)*(statu == '1') +
-              (1939 - impot_bareme * 0.75)*(statu == '2') +
+    plafond_impot = [1594, 2626]
+    param = [1196, 1970]
+    decote = ((param[0] - impot_bareme * 0.75)*(statu == '1') +
+              (param[1] - impot_bareme * 0.75)*(statu == '2') +
               0 * (statu == '3' or (statu != '1' and statu != '2')))  \
-        if ((impot_bareme <= 1594 and statu == '1') or (impot_bareme <= 2626 and statu == '2')) else 0
+        if ((impot_bareme <= plafond_impot[0] and statu == '1') or
+            (impot_bareme <= plafond_impot[1] and statu == '2')) else 0
 
     return decote
 
@@ -69,22 +72,22 @@ def calcul_reduc_RFR(impot_total, revenu, parts, nbr_enfant):
     """la réduction d’impôt sous condition de revenu fiscal de référence (RFR)"""
     #  calcul du plafond de revenu fiscale reference
     pourcentage = 0
-
-    if parts == 1 and revenu <= 18985:
-        plafond_RFR = 18984 + nbr_enfant * 3797    # 21036
+    limites = [18985, 37969, 21037, 42073, 3797]
+    if parts == 1 and revenu <= limites[0]:
+        plafond_RFR = limites[0] + nbr_enfant * limites[-1]
         pourcentage = .20
 
-    elif parts == 2 and revenu <= 37969:
-        plafond_RFR = 37968 + nbr_enfant * 3797  # 42072
+    elif parts == 2 and revenu <= limites[1]:
+        plafond_RFR = limites[1] + nbr_enfant * limites[-1]
         pourcentage = .20
 
     # réduction dégresive
-    elif parts == 1 and revenu > 18984 and revenu < 21037:
-        plafond_RFR = 21036 + nbr_enfant * 3797
+    elif parts == 1 and revenu > limites[0] and revenu < limites[2]:
+        plafond_RFR = limites[2] + nbr_enfant * limites[-1]
         pourcentage = .20 * (plafond_RFR - revenu) / 2000
 
-    elif parts == 2 and revenu > 37968 and revenu < 42073:
-        plafond_RFR = 42072 + nbr_enfant * 3797
+    elif parts == 2 and revenu > limites[2] and revenu < limites[3]:
+        plafond_RFR = limites[3] + nbr_enfant * limites[-1]
         pourcentage = .20 * (plafond_RFR - revenu) / 4000
 
     return pourcentage * impot_total if revenu < plafond_RFR else 0
